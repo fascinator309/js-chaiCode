@@ -1,6 +1,7 @@
 Attribute ->
   innerText -> display only visible text.
   innerContent -> display all content , which is also hidden by any property
+  innerHTMl -> display all inner html tags , content ,etc
 
 
 nodelist and html collection are not completely array (only carry some progperties of array)
