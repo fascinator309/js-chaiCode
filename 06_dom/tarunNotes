@@ -1,0 +1,12 @@
+Attribute ->
+  innerText -> display only visible text.
+  innerContent -> display all content , which is also hidden by any property
+
+
+nodelist and html collection are not completely array (only carry some progperties of array)
+
+convert node list || html collection to Array ->
+      use Array property 'from"
+                const newArr = Arrray.from('sourceName')
+                                sourceName -> name of nodelist || html collecion 
+
