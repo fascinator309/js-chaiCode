@@ -27,19 +27,21 @@ const result = addTwoNumbers(3, 5)
 // console.log("Result: ", result);
 
 
-function loginUserMessage(username = "sam"){
+function loginUserMessage(username = "sam"){  
+    // set default value of username , use when arguamnt not provided of username.
     if(!username){
-        console.log("PLease enter a username");
+        console.log("PLease enter a username");    // this is true when user provide undefined(if no default value) /null value
         return
     }
     return `${username} just logged in`
 }
 
 // console.log(loginUserMessage("hitesh"))
-// console.log(loginUserMessage("hitesh"))
+// console.log(loginUserMessage(undefined))
+// console.log(loginUserMessage(null))
 
 
-function calculateCartPrice(val1, val2, ...num1){
+function calculateCartPrice(val1, val2, ...num1){       // here ... is not spread operator , here it is Rest opreator , used to take unlimited parameter for function
     return num1
 }
 
@@ -56,7 +58,7 @@ function handleObject(anyobject){
 
 // handleObject(user)
 handleObject({
-    username: "sam",
+    username: "sam",  // function call with directly giving object as arguament
     price: 399
 })
 
