@@ -26,7 +26,7 @@ console.log(map)
 console.log("line breaker")
 
 for (const key in map) {
-    console.log(key , "forin loop");    // doesn't log any value
+    console.log(key );    // doesn't log any value
 }
 //The issue with your for...in loop not logging any values comes from the fact that a Map in JavaScript is not enumerable in the same way 
 console.log("line breaker")
