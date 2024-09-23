@@ -25,8 +25,9 @@ const obj4 = {5: "a", 6: "b"}
 
 // const obj3 = { obj1, obj2 }
 // const obj3 = Object.assign({}, obj1, obj2, obj4)
+//assign :- join all object in first obj provided . here,  {} empty obj make fresh obj 
 
-const obj3 = {...obj1, ...obj2}
+const obj3 = {...obj1, ...obj2}  // spread operator
 // console.log(obj3);
 
 
@@ -44,15 +45,20 @@ const users = [
         email: "h@gmail.com"
     },
 ]
+// console.log(users[1].email);
 
-users[1].email
-// console.log(tinderUser);
+/*
+Object{
+    key : value     :- together called entries
+}
+*/
 
-// console.log(Object.keys(tinderUser));
-// console.log(Object.values(tinderUser));
-// console.log(Object.entries(tinderUser));
+console.log(Object.keys(tinderUser));
+console.log(Object.values(tinderUser));
+console.log(Object.entries(tinderUser));
 
-// console.log(tinderUser.hasOwnProperty('isLoggedIn'));
+console.log(tinderUser.hasOwnProperty('isLoggedIn'));
+//hasOwnProperty :- Determines whether an object has a property with the specified name.
 
 
 const course = {
@@ -64,6 +70,7 @@ const course = {
 // course.courseInstructor
 
 const {courseInstructor: instructor} = course
+//  object destructuring in JavaScript, specifically with renaming of the extracted variable.
 
 // console.log(courseInstructor);
 console.log(instructor);
