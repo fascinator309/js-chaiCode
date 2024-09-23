@@ -29,11 +29,13 @@ const myArr2 = new Array(1, 2, 3, 4)
 console.log("A ", myArr);
 
 const myn1 = myArr.slice(1, 3)
+// slice make subarr without changing the origingl array
 
 console.log(myn1);
 console.log("B ", myArr);
 
 
 const myn2 = myArr.splice(1, 3)
+// where splice change the original array
 console.log("C ", myArr);
 console.log(myn2);
