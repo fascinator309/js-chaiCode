@@ -4,16 +4,20 @@ const user = {
 
     welcomeMessage: function() {
         console.log(`${this.username} , welcome to website`);
-        console.log(this);
+        console.log(this);   // here this refer to current obj
     }
 
 }
 
-// user.welcomeMessage()
+user.welcomeMessage()
 // user.username = "sam"
 // user.welcomeMessage()
 
-// console.log(this);
+console.log(this);    
+/*
+In Node.js :- At the top level of a file (outside of any functions), this refers to the module exports object, which is {} (an empty object) unless you've added something to exports.
+Browser environment:- If the same code runs in a browser's global scope (non-strict mode), this refers to the global window object, not {}.
+*/
 
 // function chai(){
 //     let username = "hitesh"
@@ -35,15 +39,15 @@ const chai =  () => {
 
 // chai()
 
-// const addTwo = (num1, num2) => {
-//     return num1 + num2
-// }
+const addTwo1 = (num1, num2) => {
+    return num1 + num2                // use "return" when use {} curly braces 
+}
 
 // const addTwo = (num1, num2) =>  num1 + num2
 
 // const addTwo = (num1, num2) => ( num1 + num2 )
 
-const addTwo = (num1, num2) => ({username: "hitesh"})
+const addTwo = (num1, num2) => ({username: "hitesh"})    // obj pass as argument
 
 
 console.log(addTwo(3, 4))
