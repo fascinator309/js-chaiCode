@@ -1,4 +1,4 @@
-// for of
+// # for-of loop
 
 // ["", "", ""]
 // [{}, {}, {}]
@@ -11,7 +11,7 @@ for (const num of arr) {
 
 const greetings = "Hello world!"
 for (const greet of greetings) {
-    //console.log(`Each char is ${greet}`)
+    //console.log(`Each char is ${greet}`)     // each letter of hello world
 }
 
 // Maps
@@ -34,7 +34,7 @@ const myObject = {
     game2: 'Spiderman'
 }
 
-// for (const [key, value] of myObject) {
-//     console.log(key, ':-', value);
+for (const [key, value] of myObject) {    
+    console.log(key, ':-', value);         //myObject is not iterable
     
-// }
+}
