@@ -15,7 +15,7 @@ for (const greet of greetings) {
 }
 
 // Maps
-
+// map have all unique value 
 const map = new Map()
 map.set('IN', "India")
 map.set('USA', "United States of America")
@@ -24,9 +24,17 @@ map.set('IN', "India")
 
 
 // console.log(map);
+for (const key of map) {
+    console.log(key);    // display array of key and value 
+}
+/*
+[ 'IN', 'India' ]
+[ 'USA', 'United States of America' ]
+[ 'Fr', 'France' ]
+  */
 
 for (const [key, value] of map) {
-    // console.log(key, ':-', value);
+    console.log(key, ':-', value);       // individual grab value of key and value of map
 }
 
 const myObject = {
@@ -34,7 +42,7 @@ const myObject = {
     game2: 'Spiderman'
 }
 
-for (const [key, value] of myObject) {    
-    console.log(key, ':-', value);         //myObject is not iterable
+// for (const [key, value] of myObject) {    
+//     console.log(key, ':-', value);         //myObject is not iterable
     
-}
+// }
