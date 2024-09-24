@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lang list</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div></div>
+</body>
+<script>
+    const addLangToList = (languages) => {
+        const li = document.createElement('li')
+        li.innerHTML = `${languages}`
+        
+        
+        document.querySelector('div').appendChild(li)
+    }
+    // addLangToList('javascript')
+    // addLangToList('React')
+    // addLangToList('NEXT js')
+    // addLangToList('Tailwind && SHAD CN')
+    // addLangToList('firebase')
+    // addLangToList('MongoDB')
+    // addLangToList('aws')
+
+    // optimaize way 
+
+    const addOptiLang = (languages) => {
+        const li = document.createElement('li')
+        const addText = document.createTextNode(`${languages}`)
+        li.appendChild(addText)
+    
+    }
+    addOptiLang('javascript')
+    addOptiLang('React')
+    addOptiLang('NEXT js')
+    addOptiLang('Tailwind && SHAD CN')
+    addOptiLang('firebase')
+    addOptiLang('MongoDB')
+    addOptiLang('aws')
+    
+   
+</script>
+</html>
+
+
+
+
+
+
+        
+ 
+
+
+
