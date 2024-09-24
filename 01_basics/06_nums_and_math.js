@@ -40,3 +40,9 @@ const min = 10
 const max = 20
 
 console.log(Math.floor(Math.random() * (max - min + 1)) + min)
+
+/*In JavaScript, Math.random() generates a floating-point number between:
+
+Minimum value: 0 (inclusive)
+Maximum value: 1 (exclusive)
+So, it can return values from 0 up to but not including 1.*/
