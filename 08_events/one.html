@@ -19,14 +19,16 @@
    </div>
 </body>
 <script>
-    // document.getElementById('owl').onclick = function(){
+    // onclick give us less feature then eventListener
+    // document.getElementById('owl').onclick = function(){   
     //     alert("owl clicked")
     // }
 
-     // attachEvent()
+     // attachEvent()   -> old technique
     // jQuery - on
 
-    // type, timestamp, defaultPrevented
+    //topic to learn
+    // type(types of events), timestamp, defaultPrevented/preventDefault(stop default behaviour on event i.e form push submit response to server)
     // target, toElement, srcElement, currentTarget,
     // clientX, clientY, screenX, screenY
     // altkey, ctrlkey, shiftkey, keyCode
@@ -34,14 +36,23 @@
     // document.getElementById('images').addEventListener('click', function(e){
     //     console.log("clicked inside the ul");
     // }, false)
+    // default false -> this is event propogation , context -> event bubbleing(default) , event capturing
+
+     /* event propogation -> if two or more event work on same object , which would be first call , is decided by this.
+     
+     this is of two type :
+     1. event bubbling (default) (when third input of eventListener is 'false' , which is default ) -> means closest event listener work first.
+     2. event capturing (when third input is true of both ) :-> top to bottom approach 
+     */
+    
 
     // document.getElementById('owl').addEventListener('click', function(e){
     //     console.log("owl clicked");
-    //     e.stopPropagation()
+    //     e.stopPropagation()  -> only this event will run , all other above event will execute 
     // }, false)
     
     // document.getElementById('google').addEventListener('click',function(e){
-    //     e.preventDefault();
+    //     e.preventDefault();   -> bcz of this google.com will not open
     //     e.stopPropagation()
     //     console.log("google clicked");
     // }, false)
@@ -54,10 +65,16 @@
             let removeIt = e.target.parentNode
             removeIt.remove()
         }
-    
+
+        // e.target ->  return from which element event active
+        
         
     })
     
     //removeIt.parentNode.removeChild(removeIt)
+    // .remove() -> new method and easy to implement , rather than above line way.
+
+    // event spillover -> means galti se event other element ko bhi effect kar de. 
+
 </script>
 </html>
