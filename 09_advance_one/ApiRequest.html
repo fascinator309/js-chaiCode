@@ -4,26 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .card{
+            height: 500px;
+            width: 480px;
+            border: 2px solid aqua;
+            border-radius: 10px;
+            color: white;
+            margin-left: 400px;
+            margin-top: 60px;
+            
+        }
+        #followers{
+            text-align: center;
+            
+        }
+        
+        h2{
+            margin-top: 0%;
+        }
+        button{
+            height: 50px;
+            width: 200px;
+            border: 2px solid wheat;
+            border-radius: 30px;
+            background-color: #1f8b4c;
+            color : white;
+            text-align: center;
+            align-items: center;
+            
+            
+        }
+        p{
+            font-size: 20px;
+            margin: 0;
+        }
+      
+        
+        
+    </style>
 </head>
 <body style="background-color: #212121;">
-    0	UNSENT	Client has been created. open() not called yet.
-1	OPENED	open() has been called.
-2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
-3	LOADING	Downloading; responseText holds partial data.
-4	DONE	The operation is complete.
+states:-
+0	UNSENT	->  Client has been created. open() not called yet.
+1	OPENED	->  open() has been called.
+2	HEADERS_RECEIVED	->  send() has been called, and headers and status are available.
+3	LOADING	->  Downloading; responseText holds partial data.
+4	DONE	->  The operation is complete.
+
+ <div><button><p>Load info</p></button></div>
+
 </body>
 <script>
-    const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', requestUrl)
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary'   // api url 
+    const xhr = new XMLHttpRequest();   //XMLHttpRequest is a Class , define obj
+    //0(state)	UNSENT	->  Client has been created. open() not called yet.
+    xhr.open('GET', requestUrl)  
+    //1	OPENED	->  open()  called by send() method (present in last of this page)
+
+    let data;
+    document.querySelector('button').addEventListener('click',() => {
+
+    
     xhr.onreadystatechange = function(){
-        console.log(xhr.readyState);
+        /*
+        2	HEADERS_RECEIVED -> send() has been called, and headers and status are available.
+        3	LOADING	->  Downloading; responseText holds partial data.
+        4	DONE	->  The operation is complete. */
+        // console.log(xhr.readyState);
         if (xhr.readyState === 4) {
-            const data = JSON.parse(this.responseText)
-            console.log(typeof data);
-            console.log(data.followers);
+            data = JSON.parse(this.responseText)   
+            /* here this refer to xhr 
+               responseText(data) is a object but comes in string so using JSON.parse to convert it in json means object*/
+
+            // now we can get data easily by object
+            // console.log(typeof data);
+            console.log(data);
+            // console.log(typeof data.followers);
         }
+
+        // sir task 
+        const image = data.avatar_url;
+        const followers = (data.followers).toLocaleString('en-IN');   // not every time u get vs code suggestion , be confident on your code ,to write without suggestion 
+
+        const body = document.querySelector('body')
+        const card = document.createElement('div')
+        card.classList = 'card'
+        body.appendChild(card)
+        card.innerHTML = `<div id="photo"></div>
+    <div id="followers"></div>`
+
+        document.getElementById('photo').innerHTML = `<img src="${image}" alt="img  error"></img>`
+        document.getElementById('followers').innerHTML = `<h2>Followers : ${followers}</h2>`
     }
-    xhr.send();
+    xhr.send(); // to call open() method
+})
 </script>
 </html>
