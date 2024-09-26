@@ -16,17 +16,25 @@
     }
     let intervalId;
     document.getElementById('start').addEventListener('click',function (){
-    intervalId = setInterval(sayDate, 1000, "hi")    // third parameter is passing value for handler fn
+
+        // here if conditon is important if u click on start more then one time , for everyclick it assign intervalId and start more start event 
+
+        if(!intervalId)  // checking null
+            intervalId = setInterval(sayDate, 1000, "hi")    
+    /*  setInteral(handler,time) -> handler not function call
+    -> here not function call() , here is fn reference , bcz of demand of 'handler'
+        ->  third parameter is passing value for handler fn */
     
     })
 
     document.getElementById('stop').addEventListener('click',function (){
         console.log("Stop clicked");
     clearInterval(intervalId);
+    intervalId = null;
     
     })
    
     
-
+/* setInterval and setTimeout are the Ayscronous way of running js */
 </script>
 </html>
