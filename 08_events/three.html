@@ -15,8 +15,19 @@
         console.log(str, Date.now());
     }
 
-    const intervalId = setInterval(sayDate, 1000, "hi")
+    document.getElementById('start').addEventListener('click',function (e){
+    const intervalId = setInterval(sayDate, 1000, "hi")    // third parameter is passing value for handler fn
+    e.stopPropagation();
 
-    clearInterval(intervalId)
+    document.getElementById('stop').addEventListener('click',function (e2){
+        console.log("Stop clicked");
+    clearInterval(intervalId);
+     e2.stopPropagation();
+    })
+    })
+
+    // first time stop  work well , after that stop event i times at same time , i -> no. of time of times u tried
+    
+
 </script>
 </html>
