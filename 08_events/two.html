@@ -1,3 +1,25 @@
+<!-- 
+ # javascript basic
+        by default 
+            -> sychrononus ( mode of running code )-> means line by line (top to bottom )
+
+            -> single threaded -> so it is slow in execution but only vanialla js engine , doesn't use any where bcz of single threaded , everywhere(i.e browser , node js) js use in Runtime environment . that make it fast .... chrome runtime environemnt(engine) is V8 (also in all chromiunm based browers)
+
+    blocking code -> sync way -exectue line by line , block the flow to program i.e for receving data in file reading
+    non - blocking code -> Asnc way - does not block  
+
+    task queue -> this is in runtime env, make js as aync and fast
+    
+
+    setTimeOut(function , time in milisec ) :- after provided time run function only once 
+    not core js concept , provide by runtime env/broswer
+
+    setInterval() -> run in every time interval
+
+    in js - handler , callback , function are almost same time .
+ -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,10 +39,10 @@
         document.querySelector('h1').innerHTML = "best JS series"
     }
 
-    const changeMe = setTimeout(changeText, 2000)
+    const changeMe = setTimeout(changeText, 2000)    // here not function call() , here is fn reference , bcz of demand of 'handler'
 
     document.querySelector('#stop').addEventListener('click', function(){
-        clearTimeout(changeMe)
+        clearTimeout(changeMe)  // stop settimeout execution 
         console.log("STOPPED")
     })
 </script>
