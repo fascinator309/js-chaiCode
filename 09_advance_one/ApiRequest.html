@@ -52,10 +52,19 @@ states:-
 3	LOADING	->  Downloading; responseText holds partial data.
 4	DONE	->  The operation is complete.
 
- <div><button><p>Load info</p></button></div>
+  <!-- all element created through js  -->
 
 </body>
 <script>
+    // creating button through js 
+
+    const body = document.querySelector('body')
+    const button = document.createElement('div')
+    button.innerHTML = `<button><p>Load info</p></button>`
+    body.appendChild(button)
+
+
+
     const requestUrl = 'https://api.github.com/users/hiteshchoudhary'   // api url 
     const xhr = new XMLHttpRequest();   //XMLHttpRequest is a Class , define obj
     //0(state)	UNSENT	->  Client has been created. open() not called yet.
@@ -87,7 +96,6 @@ states:-
         const image = data.avatar_url;
         const followers = (data.followers).toLocaleString('en-IN');   // not every time u get vs code suggestion , be confident on your code ,to write without suggestion 
 
-        const body = document.querySelector('body')
         const card = document.createElement('div')
         card.classList = 'card'
         body.appendChild(card)
