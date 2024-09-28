@@ -1,3 +1,6 @@
+// default behaviour of js is Prototypal which means , Don't quit to get infromation. js try to get information in depth layer by layer.
+
+
 // let myName = "hitesh     "
 // let mychannel = "chai     "
 

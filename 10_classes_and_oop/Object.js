@@ -3,11 +3,12 @@ function multipleBy5(num){
     return num*5
 }
 
-multipleBy5.power = 2
+// in js function is a also become obj 
+multipleBy5.power = 2   //  proof
 
 console.log(multipleBy5(5));
 console.log(multipleBy5.power);
-console.log(multipleBy5.prototype);
+console.log(multipleBy5.prototype);    //{}
 
 function createUser(username, score){
     this.username = username
